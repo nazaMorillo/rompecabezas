@@ -36,7 +36,7 @@ function ultimoMovimieto(movimiento){
   movimientos.push(movimiento);
   cantidadMovimientos++;
   actualizarUltimoMovimiento(movimiento);
-  console.log("cantidad de movimientos : "+cantidadMovimientos);
+  console.log("Grilla : "+grilla);
 }
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
@@ -75,14 +75,20 @@ Se te ocurre cómo solucionar esto con una variable temporal?
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
     var auxFilaPos1 = filaPos1;
     var auxColumnaPos1 = columnaPos1;
-    filaPos1 = filaPos2;
-    columnaPos1 = columnaPos2;
-    filaPos2 = auxFilaPos1;
-    columnaPos2 = auxColumnaPos1;
+    console.log("auxPos : "+ auxFilaPos1+", "+columnaPos1); 
+    console.log("Vacia : "+ filaPos1+", "+columnaPos1);    
+    console.log("Pos2 : "+ filaPos2+", "+columnaPos2);
+     
+    grilla[filaPos1][columnaPos1]= grilla[filaPos2][columnaPos2];
+    grilla[filaPos2][columnaPos2]= grilla[auxFilaPos1][auxColumnaPos1];
+    console.log("grilla Vacia : "+ filaPos2+", "+columnaPos2);
+    console.log("grilla pos 2 : "+ auxFilaPos1+", "+auxColumnaPos1);
+    
 }
 
 // Actualiza la posición de la pieza vacía
 function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
+  
   filaVacia = nuevaFila;
   columnaVacia = nuevaColumna;
 }
@@ -137,6 +143,7 @@ function moverEnDireccion(direccion) {
         actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
   //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
+    movimientos.push(direccion);
 
     }
 }
@@ -256,7 +263,7 @@ function capturarTeclas() {
       evento.which === codigosDireccion.ARRIBA ||
       evento.which === codigosDireccion.DERECHA ||
       evento.which === codigosDireccion.IZQUIERDA) {
-
+      console.log("1. funcion capturarTeclas(), evento.which"+evento.which);
       moverEnDireccion(evento.which);
       ultimoMovimieto(evento.which);
 
@@ -276,7 +283,7 @@ y ejecutando la función para que se capturen las teclas que
 presiona el usuario */
 function iniciar() {
     mostrarInstrucciones(instrucciones);
-    mezclarPiezas(30);
+    /*mezclarPiezas(30);*/
     capturarTeclas();
 }
 
