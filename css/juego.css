@@ -19,12 +19,14 @@ li {
 }
 li::before {
   content: "• ";
-  color: #EC6778;
+  /*color: #EC6778;*/
+  color: blue;
 }
 
 .col-40 h1 {
   font-size: 20px;
-  color: #E84A5F;
+  /*color: #E84A5F;*/
+  color: blue;
 }
 
 .col-40, .col-60 {
@@ -46,7 +48,18 @@ li::before {
 
 #flecha{
   font-size: 60px;
+  color: blue;
 }
+#titulo {
+  background-color: blue;
+  padding: 0.5em;
+  border-radius: 50px;
+  text-align: center;
+}
+#titulo h1 {
+  color: #fff;
+}
+
 
 .texto-centrado {
   text-align: center;
