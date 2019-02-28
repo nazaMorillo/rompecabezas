@@ -93,7 +93,6 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
   columnaVacia = nuevaColumna;
 }
 
-
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
   var resul= false;
@@ -133,7 +132,6 @@ function moverEnDireccion(direccion) {
     nuevaFilaPiezaVacia = filaVacia;
     nuevaColumnaPiezaVacia = columnaVacia +1;
   }
-
   /* A continuación se chequea si la nueva posición es válida, si lo es, se intercambia.
   Para que esta parte del código funcione correctamente deberás haber implementado
   las funciones posicionValida, intercambiarPosicionesGrilla y actualizarPosicionVacia */
@@ -143,11 +141,9 @@ function moverEnDireccion(direccion) {
         actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
   //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-    movimientos.push(direccion);
-
+        movimientos.push(direccion);
     }
 }
-
 
 //////////////////////////////////////////////////////////
 ////////A CONTINUACIÓN FUNCIONES YA IMPLEMENTADAS.////////
