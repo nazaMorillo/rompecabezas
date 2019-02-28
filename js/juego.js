@@ -58,7 +58,7 @@ function chequearSiGano() {
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-    console.log("Felicitaciones! Ganaste!!! ");
+    alert("Felicitaciones! Ganaste!!! ");
 }
 
 /* Función que intercambia dos posiciones en la grilla.
@@ -283,7 +283,7 @@ y ejecutando la función para que se capturen las teclas que
 presiona el usuario */
 function iniciar() {
     mostrarInstrucciones(instrucciones);
-    /*mezclarPiezas(30);*/
+    mezclarPiezas(30);
     capturarTeclas();
 }
 
