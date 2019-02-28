@@ -52,14 +52,13 @@ function chequearSiGano() {
           break;
         }
       }
-    }
-    mostrarCartelGanador();
+    }       
     return res;
 }
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-    //alert("Felicitaciones! Ganaste!!!");
+    console.log("Felicitaciones! Ganaste!!! ");
 }
 
 /* Función que intercambia dos posiciones en la grilla.
@@ -73,17 +72,18 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-    var auxFilaPos1 = filaPos1;
-    var auxColumnaPos1 = columnaPos1;
-    console.log("auxPos : "+ auxFilaPos1+", "+columnaPos1); 
-    console.log("Vacia : "+ filaPos1+", "+columnaPos1);    
-    console.log("Pos2 : "+ filaPos2+", "+columnaPos2);
-     
-    grilla[filaPos1][columnaPos1]= grilla[filaPos2][columnaPos2];
-    grilla[filaPos2][columnaPos2]= grilla[auxFilaPos1][auxColumnaPos1];
-    console.log("grilla Vacia : "+ filaPos2+", "+columnaPos2);
-    console.log("grilla pos 2 : "+ auxFilaPos1+", "+auxColumnaPos1);
-    
+
+    var pos1grilla=grilla[filaPos1][columnaPos1]; // salida 9 
+    //var pos2grilla=grilla[filaPos2][columnaPos2]; // salida (valor a elemento a intercambiar)   
+  
+    console.log("Pos1 ["+filaPos1+","+columnaPos1+"] valor: "+grilla[filaPos1][columnaPos1]);
+    console.log("Pos2 ["+filaPos2+","+columnaPos2+"] valor: "+grilla[filaPos2][columnaPos2]);  
+
+    grilla[filaPos1][columnaPos1] = grilla[filaPos2][columnaPos2];
+    grilla[filaPos2][columnaPos2] = pos1grilla;
+
+    console.log("Pos1 ["+filaPos1+","+columnaPos1+"] valor: "+grilla[filaPos1][columnaPos1]);
+    console.log("Pos2 ["+filaPos2+","+columnaPos2+"] valor: "+grilla[filaPos2][columnaPos2]);    
 }
 
 // Actualiza la posición de la pieza vacía
